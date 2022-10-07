@@ -91,7 +91,7 @@ public abstract class Bag {
                 this.contents[i] = contents_copy[i];
             }
             this.contents[this.numberOfContents] = item;
-            this.numberOfContents ++;
+            this.numberOfContents += 1;
             return true;
         }
         else {
@@ -119,13 +119,13 @@ public abstract class Bag {
             return null;
         }else{
             String[] contents_copy = this.contents.clone();
-            this.contents = new String[this.numberOfContents - 1];
             String popped = this.contents[this.numberOfContents-1];
+            this.contents = new String[this.numberOfContents - 1];
             int i;
             for(i=0;i<this.numberOfContents-1;i++){
                 this.contents[i] = contents_copy[i];
             }
-            this.numberOfContents --;
+            this.numberOfContents -= 1;
             return popped;
         }
     }
